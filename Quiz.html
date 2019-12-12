@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Make a Quiz!</title>
+
+    <link href="Quiz.css" rel="stylesheet"/>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+  </head>
+  <!DOCTYPE html>
+<html>
+</html>
+<body>
+        <form action = "/action_page.php">
+                <div id = "col1" class="column">a</div>
+                <div id= "col2" class="column">
+                    <b><p>Make a Quiz!</p></b>
+                    <input id = "Title" type="text" style= " position:relative; 
+                    margin-left: 2%; 
+                    margin-top: 3.5%; 
+                    height: 30px; 
+                    float: center; 
+                    width: 84%; 
+                    border-top: 0px; 
+                    border-left: 0px;
+                    border-right: 0px;
+                    text-align: left;"
+                    placeholder="Enter a Title" name="title" required> 
+                    <button type="button" style = "text-align: center; padding-left: 13px" id = "cancelButton" onclick = "window.location.href = 'title.html';"
+                    >Cancel</button>
+                    <button type="button" style = "text-align: center;" id = "next" onclick = loadQuiz()
+                    >Next</button>      
+                    <div style = "color: white;" id="notes"></div>
+                </div>
+                </form>
+                <div id = "col3" class="column">a</div>
+              </div>
+              <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+              <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+              <script src="Quiz.js"></script>
+              
+</body>

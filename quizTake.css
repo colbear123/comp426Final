@@ -1,0 +1,166 @@
+html {
+    background-image: url(https://i.imgur.com/HJ2GW3n.jpg);
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-position: left;
+    margin-top: 150px;
+  }
+  
+  input[type="text"] {
+    font-family: times;
+    font-size: 15px;
+    height: 10px
+  
+
+   
+  }
+  
+  ::placeholder {
+    font-family: times;
+    font-size: 15px;
+  }
+  
+  #col1 {
+    opacity: 0;
+  }
+  #makeFlex {
+    height: auto;
+    margin: 0 auto;
+    width: 400px;
+    float: left
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    }
+   
+    
+    
+    #col2 {
+      background: linear-gradient(120deg,#3C0908 0%, #B44240 100%);
+      border-radius: 25px;
+      margin-top: 50px;
+      padding-bottom: 2%;
+      height: auto;
+     
+      min-width:500px;
+      min-height:200px;
+             
+  }
+  #pushStuffAway {
+    margin: 0 auto;
+  }
+
+  #question {
+      margin:  auto;
+  }
+  
+  
+  #img2 {
+
+      max-width:500px;
+      height:auto;
+  
+  }
+
+  #img3 {
+
+    max-width:500px;
+    height:auto;
+
+}
+    #Return {
+      margin-left: 400px;
+      display: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #00acee; 
+      border-radius: 25px;
+      
+      height: 25px;
+      text-align: center;
+      color: white;
+      font-family: times;
+      font-size: 16px;
+  
+     
+
+    }
+  
+    #col3 {
+      opacity: 0;
+    }
+    p {
+        color: white;
+        font-size: 23px;
+        float: left;
+        padding-left: 4%;
+        padding-bottom: 2%;
+       
+    }
+    
+    #cancelButton {
+      padding-right: 30px;
+      margin-left: 3%;
+      background-color: #00acee; 
+      border-radius: 25px;
+      width: 80px;
+      height: 25px;
+      text-align: center;
+      color: white;
+      font-family: times;
+      font-size: 18px;
+      
+    }
+    #guestButton {
+      padding-right: 30px;
+      margin-left: 3%;
+      background-color: #00acee; 
+      border-radius: 25px;
+      width: 80px;
+      height: 25px;
+      text-align: center;
+      color: white;
+      font-family: times;
+      font-size: 18px;
+    }
+  
+    #next {
+      padding-right: 10px;
+      margin-left: 3%;
+      background-color: #00acee; 
+      border-radius: 25px;
+      width: 80px;
+      height: 30px;
+      text-align: center;
+      color: white;
+      font-family: times;
+      font-size: 18px;
+    }
+
+    #leave {
+      padding-right: 50px;
+      margin-left: 7%;
+      background-color: #00acee; 
+      border-radius: 25px;
+      width: 80px;
+      height: 30px;
+      text-align: center;
+      color: white;
+      font-family: times;
+      font-size: 18px;
+    }
+    
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }

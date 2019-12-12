@@ -1,0 +1,85 @@
+html {
+  background-image: url(https://i.imgur.com/HJ2GW3n.jpg);
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-position: left;
+  margin-top: 150px;
+}
+
+input[type="text"] {
+  font-family: times;
+  font-size: 15px;
+ 
+}
+
+::placeholder {
+  font-family: times;
+  font-size: 15px;
+}
+
+#col1 {
+  opacity: 0;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  }
+  
+  
+  #col2 {
+    background: linear-gradient(120deg,#3C0908 0%, #B44240 100%);
+    border-radius: 25px;
+    margin-top: 50px;
+    padding-bottom: 2%;
+    
+
+  }
+
+  #col3 {
+    opacity: 0;
+  }
+  p {
+      color: white;
+      font-size: 25px;
+      float: left;
+      padding-left: 8%;
+  }
+  
+  #cancelButton {
+    padding-right: 30px;
+    margin-left: 3%;
+    background-color: rgb(72,164,210); 
+    border-radius: 25px;
+    width: 80px;
+    height: 25px;
+    text-align: center;
+    color: white;
+    font-family: times;
+    font-size: 18px;
+    margin-top: 1%;
+  }
+
+  #next {
+    padding-right: 10px;
+    margin-left: 3%;
+    background-color: rgb(72,164,210); 
+    border-radius: 25px;
+    width: 80px;
+    height: 25px;
+    text-align: center;
+    color: white;
+    font-family: times;
+    font-size: 18px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

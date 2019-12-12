@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Create an Account</title>
+
+    <link href="Account.css" rel="stylesheet"/>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+  </head>
+  <!DOCTYPE html>
+<html>
+</html>
+<body>
+        <form action = "/action_page.php">
+                <div id = "col1" class="column">a</div>
+                <div id= "col2" class="column">
+                    <b><p>Ghibli App: Login</p></b>
+                    <input id = "username" type="text" style= " position:relative; 
+                   margin-left: 6%; 
+                    margin-top: 3.5%; 
+                    height: 30px; 
+                    float: center; 
+                    width: 86.3%; 
+                    border-top: 0px; 
+                    border-left: 0px;
+                    border-right: 0px;
+                    text-align: left;" 
+                    placeholder="Enter Username" name="username" required> 
+                    <input id = "password" type="password" style= " position:relative; 
+                    margin-left: 6%; 
+                    margin-top: 3.5%; 
+                    height: 30px; 
+                    float: center; 
+                    width: 86.3%; 
+                    border-top: 0px; 
+                    border-left: 0px;
+                    border-right: 0px;
+                    text-align: left; 
+                    "
+                    placeholder="Enter Password" name="email" required>
+                    
+                    <button type="button" style = "text-align: center; margin-right: 20px; margin-left: 6%; padding-left: 0px; padding-right: 0px;" onclick = "window.location.href = 'account.html'" id = "signupbtn"
+                    >Create Account</button>   
+                    <button type="button" style = "text-align: center; margin-right: 20px; padding-left: 28px;" id = "Login"
+                    >Login</button>  
+                    <button type="button" style = "text-align: center; padding-left: 8px;" id = "guestButton" onclick = guestClicked()
+                    >Continue As Guest</button>   
+                    <div style = "color: white;" id="message"></div>
+                </div>
+                </form>
+                <div id = "col3" class="column">a</div>
+              </div>
+              <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+              <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+              <script src="index.js"></script>
+              <script>
+                async function guestClicked() {
+                  localStorage.clear()
+                  const pubRoot = new axios.create({
+                    baseURL: "http://localhost:3000/public"
+                  });
+                  //need to handle making guest account with number
+                  var guestNum = (Math.ceil(Math.random() * 10000000000))
+                  const result1 = await pubRoot.post('/Accounts' + "/guest" + guestNum, {
+                    data: {username: "guest" + guestNum,
+                            guest: "true"}
+                  });
+                  const result2 = await pubRoot.post('/Login/', {
+                  data: {username: "guest" + guestNum,
+                    guest: "true"
+              }
+            
+        })
+                  localStorage.setItem("guest", true);
+                  
+                  window.location.href = 'title.html'
+                }
+
+                
+              </script>
+              
+              
+</body>

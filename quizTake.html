@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Take A Quiz</title>
+
+    <link href="quizTake.css" rel="stylesheet"/>
+    <link rel="icon" href="data:;base64,iVBORwOKGO="/>
+  </head>
+  <!DOCTYPE html>
+<html>
+</html>
+<body>
+        <form action = "/action_page.php">
+                <div id = "col1" class="column">a</div>
+                <div id= "col2" class="column" style= "
+                background: linear-gradient(120deg,#3C0908 0%, #B44240 100%);
+                border-radius: 25px;
+                margin-top: 50px;
+                padding-bottom: 2%;
+                height: auto;
+                ">
+                    <p id = "counter" >Question 1 of 5:</p>
+                    <b><p id = "counter1">
+                     </p></b>
+                    <div id="root1"></div>
+
+                    <p id = "Score" style = "display:none"></p>
+                    
+                    <input id = "answer" type="text" style= " position:relative; 
+                    margin-left: 0%; 
+                    margin-top: 5%; 
+                    margin-bottom: 1%; 
+                    height: 35px; 
+                    float: center; 
+                    width: 88%; 
+                    border-top: 0px; 
+                    border-left: 0px;
+                    border-right: 0px;
+                    border-color: #6d767d; 
+                    text-align: left; 
+                    background-color: #14171c; 
+                    color: #6d767d;"  
+                    placeholder="What's the answer?" name="Answer" required>
+                    <button type="button" style = "margin-top: 4%; margin-bottom: 10 px; margin-right: 90px; text-align: center;" id = "cancelButton" onclick = "window.location.href = 'title.html';"
+                    >Cancel</button>
+                    <button type="button" style = "margin-top: 4%; margin-bottom: 5px; text-align: center; margin-left: 90px;" id = "guestButton" onclick = reloadPage()
+                    >Next</button>
+                    <button type="button"  id = "Return" onclick = reloadPage()
+                    >Return Home</button>       
+                    <div style = "color: white;" id="notes"></div>
+                </div>
+                </form>
+                <div id = "col3" class="column">a</div>
+              </div>
+              
+              <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+              <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+              <script src="quizTake.js"></script>
+
+              </script>
+              
+              
+</body>

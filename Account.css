@@ -1,0 +1,115 @@
+html {
+  background-image: url(http://fanaru.com/ponyo/image/191570-ponyo-ponyo-and-ssuke.png?__cf_chl_jschl_tk__=7cb7ca51a981887f8db4ca2f3caef7145f245a3d-1576010074-0-AekU9ojYbIXZAzwPgXAIYXemryAlrOKIaP2ZX1_8ekbaByTRkBdooWLmK4tlAfIZCgJFbjXHbEn83vav6fZdbZBpw81d9C_mw79epGk0yNzKjYlsIsJTyLGlZSgCFXliT-RdkrW2XxzgFzN5oA7Ia7OrgIp8m9jEk230inxLXzYC7fx0FswWpQgdG3KRs-S3VjorH4gpgq-HKEEKb8aC5y1ofzrrOAiJ4E3y_WkqvGBsWnNGh6Xf79VFL5QGmB3Q7f9b5u1hTtV3GB6Dvuwylqq4V3W31aMxeOgQ3KbKzLRb7QPxDE97OxBlVTldA_ig7w);
+  background-position: left;
+  margin-top: 150px;
+}
+
+input[type="text"] {
+font-family: times;
+font-size: 15px;
+
+}
+
+::placeholder {
+font-family: times;
+font-size: 15px;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  
+}
+
+#col1 {
+  display: none;
+}
+
+#col2 {
+  background: linear-gradient(120deg, #DE7256 0%, #B7343B 100%);
+  border-radius: 25px;
+  margin-top: 50px;
+  margin-left: 270px;
+  padding-bottom: 2%;
+  min-width: 500px;
+}
+  
+  
+
+#col3 {
+  display: none;
+}
+
+div{
+  width: 100%;
+  height: 50%;
+ 
+}
+p {
+    color: white;
+    font-size: 25px;
+    float: center;
+    padding-left: 8%;
+    
+}
+
+#signupbtn {
+  padding-right: 30px;
+  margin-left: 3%;
+  background-color: rgb(72,164,210); 
+  border-radius: 25px;
+  width: 120px;
+  height: 25px;
+  text-align: center;
+  display:inline-block;
+  margin-top: 5%;
+  color: white;
+  font-family: times;
+  font-size: 12px;
+  justify-content: space-between;
+  
+}
+
+#Login {
+  padding-right: 30px;
+  
+  background-color: rgb(72,164,210); 
+  border-radius: 25px;
+  width: 120px;
+  height: 25px;
+  margin-top: 5%;
+  text-align: center;
+  display:inline-block;
+  color: white;
+  font-family: times;
+  font-size: 12px;
+  justify-content: space-between;
+  
+}
+
+#guestButton {
+ 
+  
+  background-color: rgb(72,164,210); 
+  border-radius: 25px;
+  width: 120px;
+  height: 25px;
+  text-align: center;
+  display:inline-block;
+  color: white;
+  font-family: times;
+  font-size: 12px;
+  justify-content: space-between;
+
+}
+
+
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

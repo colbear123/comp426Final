@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ghibli App</title>
+
+    <link href="style.css" rel="stylesheet" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+  </head>
+  <!DOCTYPE html>
+<html>
+<head>
+<style>
+.navbar {
+  overflow: hidden;
+  background-color: #d9e4f5;
+  background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
+  font-family: Arial;
+  margin: -1.05%
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 16.5px 16px;
+  text-decoration: none;
+  width: 33.33%;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+  width: 33.33%;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+  width: 100%;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover {
+  background-image: linear-gradient(360deg, #ff9a9e 0%, #fc69cd 100%);
+}
+
+.dropbtn:hover {
+  background-image: linear-gradient(360deg, #ff9a9e 0%, #fc69cd 100%)
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-image: linear-gradient(360deg, #ff9a9e 0%, #fecfef 40%);
+  min-width: 0px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 33.66%;
+}
+
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  width: 100%;
+
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+  text-align: center;
+}
+#quiz1 {
+cursor: pointer;
+}
+#quiz2 {
+  cursor: pointer;
+}
+#recommend {
+  cursor: pointer;
+}
+#account {
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="dropdown">
+      <button id = "quiz" class="dropbtn">Quizzes
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a id = "quiz1" onclick = handleGuest() >Make a Quiz!</a>
+        <a id = "quiz2" onclick = handleGuestTake()>Find a Quiz!</a>
+      </div>
+    </div>
+    <a id = "recommend" onclick =  handleGuestR()>Recommended</a>
+    <a id = "Login" href = "index.html" onclick= clearLocalStorage() >Login</a>
+  </div>
+
+</body>
+</html>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="scripts.js" type="module"></script>
+    <script>
+      function clearLocalStorage() {
+        localStorage.clear()
+        window.location.href = 'index.html'
+      }
+      function handleGuest() {
+        if(localStorage.jwt) {
+          window.location.href = 'Quiz.html'
+    }
+  }
+  function handleGuestR() {
+    var arr = []
+    var count = 0;
+    var arr2 = []
+        if(localStorage.jwt) {
+          var request4 = new XMLHttpRequest()
+            request4.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
+            request4.onload = function() {
+              var data4 = JSON.parse(this.response)
+            if (request4.status >= 200 && request4.status < 400) {
+              data4.forEach(movie4 => {
+                axios .get("http://localhost:3000/user/ListOfMovies/" + movie4.id, {
+                    headers: { Authorization: "Bearer " + localStorage.jwt }},) 
+                    .then (response5 => {
+                      arr[count] = []
+                      arr[count][0] = movie4.id
+                      arr[count][1] = response5.data.result
+                      arr.sort(function(a,b){return b[1] - a[1]});
+                      
+                      count++
+                      if(count == 20) {
+                         axios .get("http://localhost:3000/user/LikeMovies", {
+                         headers: { Authorization: "Bearer " + localStorage.jwt }},) 
+                         .then(response6 => {
+                         for(var val in response6.data.result) {
+                           //console.log(response6.data.result[val])
+                           for(var i = 0; i < 20; i++) {
+                             if(arr[i][0] != response6.data.result[val]) {
+                              //console.log(response5.data.result[i])
+                              //console.log(arr[0][1])
+                              console.log(arr[i][0])
+
+                              arr2.push(arr[i][0])
+                              //console.log(arr)
+                              
+                             }
+                           }
+                         }
+                         })
+                         axios .get("http://localhost:3000/user/DislikedMovies", {
+                         headers: { Authorization: "Bearer " + localStorage.jwt }},) 
+                         .then(response7 => {
+                         for(var val in response7.data.result) {
+                           //console.log(response6.data.result[val])
+                           for(var i = 0; i < 20; i++) {
+                             if(arr[i][0] == response7.data.result[val]) {
+                              //console.log(response5.data.result[i])
+                              //console.log(arr[0][1])
+                              var index = arr2.indexOf(arr[i][0]);
+                              if (index !== -1) arr2.splice(index, 1);
+                             }
+                           }
+                         }
+                         
+                         
+                          var request10 = new XMLHttpRequest()
+                          request10.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
+                          request10.onload = function() {
+                          
+                              var data10 = JSON.parse(this.response)
+                              if (request10.status >= 200 && request10.status < 400) {
+                              data10.forEach(movie10 => {
+                                for(var potato = 0; potato < arr2.length; potato++) {
+
+                                 //console.log(movie10.id)
+                                  if(arr2[potato] == movie10.id) {
+                                    
+                                    arr2[potato] = movie10.title
+                                }
+                                }
+
+
+                                
+                          })
+                          }
+                          console.log(arr2)
+                          //Works here, FUCK IT
+                          //
+                          //
+                          //
+                          //
+                          //If the length of arr2 is 0 then reccomendations should not go anywhere
+                          //Else make a post request to recommended movies
+                          //and then display movies based on that post request
+                          
+                          arr2 = arr2.slice(0,3)
+                          console.log(arr2)
+                          //make axios request with 3 movies with highest rotten tomatoes rating(HARD CODE THIS SHIT)
+                          
+                          if(arr2.length == 0) {
+                            var temp = ["Only Yesterday", "Grave of the Fireflies", "Spirited Away"]
+                            axios .post("http://localhost:3000/user/RecomendMovies/", {
+                            data: temp},{
+                            headers: { Authorization: "Bearer " + localStorage.jwt }}, )
+                            window.location.href = "recommended.html"    
+                            
+
+                          } else  {
+                            axios .post("http://localhost:3000/user/RecomendMovies/", {
+                            data: arr2},{
+                            headers: { Authorization: "Bearer " + localStorage.jwt }}, )
+                            window.location.href = "recommended.html"    
+                          }
+                          
+                         
+                         }
+                         
+                         request10.send()
+                         
+                        
+                         })
+                         
+                         //arr2 contains sorted movies that aren't contained in like or dislikes
+                      }
+                    })
+  })
+              }
+           }
+           
+            }
+            request4.send()
+}
+  function handleGuestA() {
+        if(localStorage.jwt) {
+          window.location.href = 'index.html'
+    }
+  }
+  function handleGuestTake() {
+    if(localStorage.jwt) {
+      window.location.href = 'QuizPage.html'
+    }
+  }
+    </script>
+    
+  </body>
+  
+</html>

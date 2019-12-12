@@ -1,0 +1,152 @@
+html {
+  background-image: url(QuizSearchBack_ground.jpg);
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-position: left;
+  margin-top: 150px;
+}
+
+input[type="text"] {
+  font-family: times;
+  font-size: 15px;
+ 
+}
+
+::placeholder {
+  font-family: times;
+  font-size: 15px;
+}
+
+#col1 {
+  opacity: 0;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  }
+  
+  form {
+  left: 58%;
+  top: 65%;
+  margin-left: -25%;
+  position: absolute;
+  margin-top: -25%; 
+  
+  }
+  #col2 {
+    padding-top: 5%;
+    background: linear-gradient(120deg,#3C0908 0%, #B44240 100%);
+    border-radius: 25px;
+    margin-top: 50px;
+    padding-bottom: 2%;
+    min-width: 500px;
+    max-width:550px;
+    max-height: 300px;
+    min-height: 300px;
+      color: white;
+      font-size: 35px;
+      text-align: center;
+      
+     
+    
+
+  }
+  #inner {
+      background: linear-gradient(120deg,#3C0908 0%, #B44240 100%);
+    
+  }
+  ul {
+    position: relative;
+      color: white;
+      font-size: 20;
+      text-align: center;
+  }
+
+  li {
+      position: relative;
+      color: white;
+      font-size: 20;
+      text-align: left;
+      min-width: 100%;
+  }
+  #col3 {
+    opacity: 0;
+  }
+  p {
+    
+      position: relative;
+      color: white;
+      font-size: 50px;
+      text-align: center;
+      
+      text-decoration: none;
+      top: -30px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+    li {
+     
+      color: white;
+      font-size: 30px;
+      float: left;
+      padding-left: 4%;
+      padding-bottom: 2%;
+         
+    }
+  
+  
+  #cancelButton {
+    padding-right: 30px;
+    margin-left: 3%;
+    background-color: #00acee; 
+    border-radius: 25px;
+    width: 80px;
+    height: 100px;
+    text-align: center;
+    color: white;
+    font-family: times;
+    font-size: 18px;
+  }
+
+  #next {
+    padding-right: 10px;
+    margin-left: 3%;
+    background-color: #00acee; 
+    border-radius: 25px;
+    width: 80px;
+    height: 25px;
+    text-align: center;
+    color: white;
+    font-family: times;
+    font-size: 18px;
+
+  }
+
+  #Return {
+    
+    margin-right: 24%;
+    background-color: #00acee; 
+    border-radius: 25px;
+    width: 180px;
+    height: 25px;
+    margin-top: 10%;
+    text-align: center;
+    display:inline-block;
+    color: white;
+    font-family: times;
+    font-size: 16px;
+
+    
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
