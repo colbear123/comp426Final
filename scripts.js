@@ -43,6 +43,15 @@ request.onload = function() {
   if (request.status >= 200 && request.status < 400) {
     data.forEach(movie => {
       if(!localStorage.guest) {
+        axios .post("http://localhost:3000/user/LikeMovies", {
+          data: 0,},{
+         headers: { Authorization: "Bearer " + localStorage.jwt }},)
+         axios .post("http://localhost:3000/user/DislikedMovies", {
+          data: 0,},{
+         headers: { Authorization: "Bearer " + localStorage.jwt }},)
+        axios .post("http://localhost:3000/user/RecomendMovies", {
+          data: 0,},{
+         headers: { Authorization: "Bearer " + localStorage.jwt }},)
       axios .post("http://localhost:3000/user/ListOfMovies/" + movie.id, {
           data: (movie.rt_score/125)},{
           headers: { Authorization: "Bearer " + localStorage.jwt }}, )
